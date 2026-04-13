@@ -72,16 +72,8 @@ EOs: ${selectedEOs.join(", ") || "auto"}
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "claude-3-5-sonnet-latest",
-          max_tokens: 3000,
-          system: SYSTEM_PROMPT,
-          messages: [
-            {
-              role: "user",
-              content: userPrompt
-            }
-          ]
-        })
+  prompt: userPrompt
+})
       });
 
       const data = await response.json();
